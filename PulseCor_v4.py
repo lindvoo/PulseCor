@@ -687,10 +687,17 @@ class PlotCanvasTrials(FigureCanvas):
         self.axes.cla()
 
         # Plot first trial
-        self.axes.plot(self.trialdat, c='C0')
+        if self.trialsaccepted[self.trnum] == 1:
+            self.axes.plot(self.trialdat, c='C0')
+        else:
+            self.axes.plot(self.trialdat, c='gray')
+        
         self.axes.plot(self.trialpeaks, [self.trialdat[c] for c, num in enumerate(self.trialpeaks)], '|',
                        color=(0.9, 0.9, 0.9), markersize=500)
-        self.axes.plot(self.trialibi, 'y')
+        if self.trialsaccepted[self.trnum] == 1:
+            self.axes.plot(self.trialibi, 'y')
+        else:
+            self.axes.plot(self.trialibi, 'gray')
         self.draw()
 
     def trialup(self):
@@ -728,6 +735,7 @@ class PlotCanvasTrials(FigureCanvas):
         try:
 
             self.trialsaccepted[self.trnum] = 1
+            self.plot_trials()
 
         except IndexError:
 
@@ -738,6 +746,7 @@ class PlotCanvasTrials(FigureCanvas):
         try:
 
             self.trialsaccepted[self.trnum] = 0
+            self.plot_trials()
 
         except IndexError:
 
