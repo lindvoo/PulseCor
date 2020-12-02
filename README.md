@@ -31,7 +31,7 @@ These are the steps you can follow:
 
 2) With the "<" and ">" arrows you can click though the trials
 
-3) With "Accept" and "Reject" you can accept or reject a trail. 
+3) With "Accept" and "Reject" you can accept or reject a trail. If you reject a trial the data will be plotted in gray.
 
 4) "Save" it will output a file with 1 and 0 corresponding with your Accept and Reject decision
 
