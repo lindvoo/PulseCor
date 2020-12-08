@@ -606,13 +606,13 @@ class PlotCanvas(FigureCanvas):
 
             # Create file and save in PulseCor_output directory
 
-            newname = os.path.join(path + "/PulseCor_output/" + file[:-4] + "_peaks.txt")
+            newname = os.path.join(path, "PulseCor_output", file[:-4] + "_peaks.txt")
             thefile = open(newname, 'w')
             for item in self.peaks:
                 thefile.write("%s\n" % item)
             thefile.close()
             
-            newname = os.path.join(path + "/PulseCor_output/" + file[:-4] + "_IBI.txt")
+            newname = os.path.join(path, "PulseCor_output", file[:-4] + "_IBI.txt")
             thefile = open(newname, 'w')
             for item in self.ibichannel:
                 thefile.write("%s\n" % item)
@@ -782,7 +782,7 @@ class PlotCanvasTrials(FigureCanvas):
                 os.makedirs(os.path.join(path, 'PulseCor_output'))
 
             # Create file and save in PulseCor_output directory
-            newname = os.path.join(path + "/PulseCor_output/" + file[:-4] + "_acceptedtrials.txt")
+            newname = os.path.join(path, "PulseCor_output", file[:-4] + "_acceptedtrials.txt")
             thefile = open(newname, 'w')
             for item in self.trialsaccepted:
                 thefile.write("%s\n" % int(item))
