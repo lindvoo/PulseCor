@@ -33,6 +33,7 @@ import bioread
 # Filter
 from scipy.signal import butter, filtfilt
 
+os.environ.pop("QT_QPA_PLATFORM_PLUGIN_PATH")
 
 # ------------------------------------------------------------------------------
 
