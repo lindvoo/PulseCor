@@ -564,7 +564,7 @@ class PlotCanvas(FigureCanvas):
        
     
         
-         '''
+        '''
         The modification of the Axes.lines property was deprecated in Matplotlib 3.5 
         and will be removed two minor releases later. Use Artist.remove() instead.
         
