@@ -562,7 +562,13 @@ class PlotCanvas(FigureCanvas):
 
     def remove(self):
        
-        self.axes.lines=[]
+    
+        
+         '''
+        The modification of the Axes.lines property was deprecated in Matplotlib 3.5 
+        and will be removed two minor releases later. Use Artist.remove() instead.
+        
+        ---
         #for c,val in enumerate(self.axes.lines):
         #    print(c)
         #    del self.axes.lines[0]
@@ -571,6 +577,17 @@ class PlotCanvas(FigureCanvas):
         #del self.axes.lines[0]
         #del self.axes.lines[0]
         #del self.axes.lines[0]
+        ---
+        matplotlib version 3.1: self.axes.lines=[]
+        ---
+        in 3.5.2 this solution worked:
+        for c,a in enumerate(self.axes.lines):
+            self.axes.lines.pop(c)
+        '''
+
+        # in 3.7 this works
+        for line in self.axes.lines:
+            line.remove()
 
     def plotall(self):
 
